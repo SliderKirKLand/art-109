@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tutorial</title>
+    <meta name="description" content="This is a tutorial on HTML.">
+</head>
+<body>
+    <header>
+        <h1>HTML is Cool</h1>
+        <nav>
+            <ol>
+                <li><a href="#cat">CAT</a></li>
+                <li><a href="#cat-2">CAT 2</a></li>
+                <li><a href="#cat-3">CAT 3</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Choose your cat mood</h2>
+            <label for="cat-mood">Mood:</label>
+            <select id="cat-mood" onchange="document.getElementById('mood-result').textContent = this.value">
+                <option value="😸 Happy cat!">Happy</option>
+                <option value="😴 Sleepy cat!">Sleepy</option>
+                <option value="😾 Grumpy cat!">Grumpy</option>
+                <option value="🙀 Surprised cat!">Surprised</option>
+            </select>
+            <p id="mood-result" aria-live="polite">😸 Happy cat!</p>
+        </section>
+        
+        <section id="cat">
+            <h2>Cool CAT is the OG</h2>
+            <p>CAT ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <img src="images/cat.jpg" alt="A cute cat">
+        </section>
+
+        <section id="cat-2">
+            <h2>Cool CAT 2 is cute</h2>
+            <p>CAT 2 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 2 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 2 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 2 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 2 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 2 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 2 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 2 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <img src="images/cat2.png" alt="Cat 2">
+        </section>
+
+        <section id="cat-3">
+            <h2>Cool CAT 3 is angry</h2>
+            <p>CAT 3 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 3 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 3 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 3 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 3 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 3 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 3 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>CAT 3 ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <img src="images/cat3.png" alt="Cat 3">
+        </section>
+
+    </main>
+    <footer>
+        <br>
+        <p>RENEW ONLINE, BY KIOSK, OR PHONE</p>
+        <p>VISIT <a href="https://www.dmv.ca.gov/">www.DMV.CA.GOV</a> or CALL 1-800-777-0133</p>
+    </footer>
+</body>
+</html>
