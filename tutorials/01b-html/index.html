@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Images</title>
 </head>
+
 <body>
-    <h1>Image here</h1>
+    <div>
+        <img src="images/cat.jpg" alt="Orange Cat">
+    </div>
+    <div>
+        <img src="images/cat.jpg" alt="Orange Cat">
+    </div>
+    <section>
+        <h2>Responsive Images Using srcset</h2>
+
+        <img src="images/integra-1280.jpg" srcset="
+    images/integra-640.jpg 640w,
+    images/integra-1280.jpg 1280w,
+    images/integra-1920.jpg 1920w
+  " sizes="(max-width: 700px) 100vw, (max-width: 1200px) 90vw, 1280px"
+            alt="White Acura Integra Type R parked near boats">
+    </section>
+
+
 </body>
+
 </html>
