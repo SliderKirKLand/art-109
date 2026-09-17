@@ -1,71 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Minh's digital media portfolio.">
-  <title>Minh, Portfolio</title>
+  <meta name="description" content="Nhat Minh Le's digital media art portfolio.">
+  <title>Nhat Minh Le | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="site-header" id="top">
-    <h1>Minh</h1>
-    <nav>
-      <a href="#work">Work</a>
+  <div id="page-top"></div>
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#work">Projects <span>⌄</span></a>
+      <a href="#work">Personal Projects <span>⌄</span></a>
+      <a href="#code">Code <span>⌄</span></a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
     </nav>
+
+    <a class="wordmark" href="#top">
+      Nhat Minh Le
+    </a>
   </header>
 
+  <div class="welcome-ticker" aria-label="Welcome banner">
+    <div class="ticker-track">
+      <span>Welcome</span>
+      <span class="smile">☻</span>
+      <span>Welcome</span>
+      <span class="smile outline">☺</span>
+      <span>Welcome</span>
+      <span class="smile">☻</span>
+      <span>Welcome</span>
+      <span class="smile outline">☺</span>
+      <span>Welcome</span>
+      <span class="smile">☻</span>
+    </div>
+  </div>
+
   <main>
-    <section class="intro">
-      <p class="label">Digital media portfolio</p>
-      <h2>Hi, I’m Minh.</h2>
-      <p>I make visual and interactive work for the web. This portfolio shows three pieces from my practice.</p>
+
+    <section class="hero" aria-labelledby="hero-title">
+
+      <div class="hero-card">
+        <p class="eyebrow">
+          Digital Media Art / San Jose
+        </p>
+
+        <h1 id="hero-title">
+          Feel free to click on the navigation or scroll down to see more selected works.
+        </h1>
+
+        <a class="circle-link" href="#work" aria-label="Scroll to selected work">
+          ↘
+        </a>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img src="assets/pfp.jpg" alt="Portrait of Nhat Minh Le">
+      </div>
+
     </section>
 
-    <section id="work" class="work">
-      <h2>Selected work</h2>
+    <section id="work" class="work-section" aria-labelledby="work-title">
 
-      <article class="piece">
-        <img src="assets/piece-1-960.png" srcset="assets/piece-1-480.png 480w, assets/piece-1-960.png 960w, assets/piece-1-1440.png 1440w" sizes="(max-width: 48rem) 100vw, 70rem" alt="Abstract digital artwork with a colorful halftone texture and distorted shapes">
-        <div class="piece-text">
-          <h3>Piece 1</h3>
-          <p>An experimental image built from color, texture, and distortion.</p>
-        </div>
-      </article>
+      <div class="section-intro">
+        <p class="eyebrow">
+          01 / Selected Work
+        </p>
 
-      <article class="piece">
-        <img src="assets/piece-2-960.png" srcset="assets/piece-2-480.png 480w, assets/piece-2-960.png 960w, assets/piece-2-1440.png 1440w" sizes="(max-width: 48rem) 100vw, 70rem" alt="Colorful abstract digital artwork with a dense textured pattern">
-        <div class="piece-text">
-          <h3>Piece 2</h3>
-          <p>A study of repeated marks, bright color, and visual noise.</p>
-        </div>
-      </article>
+        <h2 id="work-title">
+          TouchDesigner studies built for projection, movement, and shared space.
+        </h2>
+      </div>
 
-      <article class="piece">
-        <img src="assets/piece-3-960.png" srcset="assets/piece-3-480.png 480w, assets/piece-3-960.png 960w, assets/piece-3-1440.png 1440w" sizes="(max-width: 48rem) 100vw, 70rem" alt="Green and blue abstract artwork with reflective geometric forms">
-        <div class="piece-text">
-          <h3>Piece 3</h3>
-          <p>A digital composition combining organic forms with geometric patterns.</p>
-        </div>
-      </article>
+      <div class="project-grid">
+
+        <article class="project project-tall">
+          <img src="assets/touchDesigner1.gif" alt="TouchDesigner projection showing a glowing blue human figure">
+
+          <div class="project-info">
+            <p>01</p>
+            <h3>CADRE SO Interactive Projection</h3>
+            <span>2023 / Xbox Kinect</span>
+
+            <small>
+              Made to promote CADRE SO during 2023, using Xbox Kinect and TouchDesigner to make the art piece
+              interactive.
+            </small>
+          </div>
+        </article>
+
+        <article class="project project-short">
+          <img src="assets/touchDesigner2.gif" alt="TouchDesigner animation with colorful glitch textures and circles">
+
+          <div class="project-info">
+            <p>02</p>
+            <h3>CADRE SO Interactive Projection</h3>
+            <span>2023 / Xbox Kinect</span>
+
+            <small>
+              Made to promote CADRE SO during 2023, using Xbox Kinect and TouchDesigner to make the art piece
+              interactive.
+            </small>
+          </div>
+        </article>
+
+        <article class="project project-medium">
+          <img src="assets/touchDesigner3.gif" alt="Two screen TouchDesigner projection with pink and purple imagery">
+
+          <div class="project-info">
+            <p>03</p>
+            <h3>CADRE SO Interactive Projection</h3>
+            <span>2023 / Xbox Kinect</span>
+
+            <small>
+              Made to promote CADRE SO during 2023, using Xbox Kinect and TouchDesigner to make the art piece
+              interactive.
+            </small>
+          </div>
+        </article>
+
+        <article class="project project-short">
+          <img src="assets/touchDesigner4.gif" alt="TouchDesigner projection installation in a public space">
+
+          <div class="project-info">
+            <p>04</p>
+            <h3>Free Throw</h3>
+            <span>SAP Center / Tracking</span>
+
+            <small>
+              Made for the Free Throw event at the SAP Center, using tracking techniques to apply visual effects to the
+              player and basketball.
+            </small>
+          </div>
+        </article>
+
+        <article class="project project-tall">
+          <img src="assets/touchDesigner5.gif" alt="TouchDesigner visual system with magenta effects">
+
+          <div class="project-info">
+            <p>05</p>
+            <h3>Concert Silhouette Study</h3>
+            <span>Visual Effects Practice</span>
+
+            <small>
+              A small practice using visual effects applied to a silhouette for a concert.
+            </small>
+          </div>
+        </article>
+
+        <article class="project project-medium">
+          <img src="assets/touchDesigner6.gif" alt="Person interacting with a bright green and blue projection">
+
+          <div class="project-info">
+            <p>06</p>
+            <h3>Maker Faire 2024</h3>
+            <span>CADRE SO Promotion</span>
+
+            <small>
+              Made for Maker Faire 2024 to promote CADRE SO.
+            </small>
+          </div>
+        </article>
+
+        <article class="project project-short">
+          <img src="assets/touchDesigner7.gif" alt="Blue particle projection spreading across a gallery wall">
+
+          <div class="project-info">
+            <p>07</p>
+            <h3>Maker Faire 2024</h3>
+            <span>CADRE SO Promotion</span>
+
+            <small>
+              Made for Maker Faire 2024 to promote CADRE SO.
+            </small>
+          </div>
+        </article>
+
+      </div>
     </section>
 
-    <section id="about" class="about">
-      <h2>About</h2>
-      <p>I am a digital media student interested in websites, archives, images, and experimental design. I use simple web structures to present ideas and artwork.</p>
+    <section id="about" class="about-section" aria-labelledby="about-title">
+
+      <div>
+        <p class="eyebrow">
+          02 / About
+        </p>
+
+        <h2 id="about-title">
+          Interactive work for curious audiences.
+        </h2>
+      </div>
+
+      <div class="about-copy">
+        <p>
+          I am Nhat Minh Le, an undergraduate Digital Media Art student interested in interactive design, motion
+          graphics, and immersive installations.
+        </p>
+
+        <p>
+          I work with TouchDesigner, Blender, Adobe Creative Suite, projection, sound, space, and audience participation
+          to build experiences people can enter and explore.
+        </p>
+      </div>
+
     </section>
 
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    <section id="code" class="code-section" aria-labelledby="code-title">
+
+      <p class="eyebrow">
+        03 / Code
+      </p>
+
+      <h2 id="code-title">
+        Appreciation of fun.
+      </h2>
+
+      <a class="text-link" href="null" target="_blank" rel="noreferrer">
+        null <span>↗</span>
+      </a>
+
     </section>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+
+      <p class="eyebrow">
+        04 / Contact
+      </p>
+
+      <h2 id="contact-title">
+        Things to remember by.
+      </h2>
+
+      <a class="text-link" href="null" target="_blank" rel="noreferrer">
+        null <span>↗</span>
+      </a>
+
+    </section>
+
   </main>
 
   <footer>
-    <p>Have fun</p>
-    <a href="#top">Back to top</a>
+    <p>© Have fun</p>
+
+    <a class="back-to-top" href="#page-top">
+      Back to top ↑
+    </a>
   </footer>
+
 </body>
+
 </html>
