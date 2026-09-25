@@ -252,11 +252,16 @@ h1 {
   font-size: clamp(2.7rem, 5vw, 5.2rem);
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.flex-container-grid {
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   align-items: start;
+}
+
+.flex-item-grid {
+  flex: 1 1 15rem;
+  min-width: 0;
 }
 
 .project {
@@ -293,6 +298,18 @@ h1 {
 
 .project-medium {
   margin-top: 3rem;
+}
+
+.project-grid .project:nth-child(3n + 1) {
+  flex-basis: 19rem;
+}
+
+.project-grid .project:nth-child(3n + 2) {
+  flex-basis: 15rem;
+}
+
+.project-grid .project:nth-child(3n) {
+  flex-basis: 17rem;
 }
 
 .project-info {
@@ -501,8 +518,10 @@ footer a {
     margin-top: 2rem;
   }
 
-  .project-grid {
-    display: block;
+  .flex-container-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   .project,
