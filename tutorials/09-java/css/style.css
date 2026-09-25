@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #ededed;
+  --text: #111;
+  --card-bg: #ffffff;
+  --btn-bg: #f4f4f4;
+  --btn-border: #999;
+  --btn-text: #222;
+  --btn-hover: #d9d9d9;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background .35s ease, color .35s ease;
+}
+
+body.dark-theme {
+  --bg: #16171a;
+  --text: #f1f1f1;
+  --card-bg: #24262b;
+  --btn-bg: #2e3036;
+  --btn-border: #555;
+  --btn-text: #f1f1f1;
+  --btn-hover: #3c3f47;
+}
+
+.spam-page {
+  min-height: 670px;
+  padding: 58px 0 80px 56px;
+}
+
+.heading-area {
+  position: relative;
+  width: 220px;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+#powButton,
+#themeToggle {
+  display: block;
+  padding: 4px 8px;
+  margin: 0 0 8px;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+#powButton:hover,
+#powButton:focus-visible,
+#themeToggle:hover,
+#themeToggle:focus-visible {
+  background: var(--btn-hover);
+  outline: 1px solid var(--btn-border);
+}
+
+.spam-stage {
+  display: flex;
+  align-items: center;
+  gap: 68px;
+  width: min(820px, calc(100vw - 100px));
+  margin: 10px 0 0 92px;
+}
+
+
+.spam-click {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  min-height: 300px;
+}
+
+.spam-img {
+  height: auto;
+  transition: width .4s ease, transform .2s ease;
+}
+
+.spam-click:active .spam-img {
+  transform: scale(0.97);
+}
+
+.spam-img.size-1 {
+  width: 160px;
+}
+
+.spam-img.size-2 {
+  width: 260px;
+}
+
+.spam-img.size-3 {
+  width: 380px;
+}
+
+@media (max-width: 760px) {
+  .spam-page {
+    min-height: 100vh;
+    padding: 35px 20px 60px;
+  }
+
+  .heading-area {
+    width: auto;
+  }
+
+  .spam-stage {
+    width: 100%;
+    margin: 20px 0 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .spam-img.size-3 {
+    width: min(80vw, 340px);
+  }
+}
