@@ -14,10 +14,11 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/baguetteBox.css">
 </head>
 
 <body>
-  <div id="page-top"></div>
+  <div id="top"></div>
   <header class="site-header">
     <nav class="main-nav" aria-label="Main navigation">
       <a href="#work">Projects <span>⌄</span></a>
@@ -85,7 +86,9 @@
       <div class="project-grid flex-container-grid">
 
         <article class="project project-tall flex-item-grid">
-          <img src="assets/touchDesigner1.gif" alt="TouchDesigner projection showing a glowing blue human figure">
+          <a class="lightbox-image" href="assets/touchDesigner1.gif" data-caption="CADRE SO Interactive Projection">
+            <img src="assets/touchDesigner1.gif" alt="TouchDesigner projection showing a glowing blue human figure">
+          </a>
 
           <div class="project-info">
             <p>01</p>
@@ -96,11 +99,14 @@
               Made to promote CADRE SO during 2023, using Xbox Kinect and TouchDesigner to make the art piece
               interactive.
             </small>
+            <a class="project-link" href="projects/cadre-so-01.html">View project ↗</a>
           </div>
         </article>
 
         <article class="project project-short flex-item-grid">
-          <img src="assets/touchDesigner2.gif" alt="TouchDesigner animation with colorful glitch textures and circles">
+          <a class="lightbox-image" href="assets/touchDesigner2.gif" data-caption="CADRE SO Interactive Projection, study two">
+            <img src="assets/touchDesigner2.gif" alt="TouchDesigner animation with colorful glitch textures and circles">
+          </a>
 
           <div class="project-info">
             <p>02</p>
@@ -111,11 +117,14 @@
               Made to promote CADRE SO during 2023, using Xbox Kinect and TouchDesigner to make the art piece
               interactive.
             </small>
+            <a class="project-link" href="projects/cadre-so-02.html">View project ↗</a>
           </div>
         </article>
 
         <article class="project project-medium flex-item-grid">
-          <img src="assets/touchDesigner3.gif" alt="Two screen TouchDesigner projection with pink and purple imagery">
+          <a class="lightbox-image" href="assets/touchDesigner3.gif" data-caption="CADRE SO Interactive Projection, study three">
+            <img src="assets/touchDesigner3.gif" alt="Two screen TouchDesigner projection with pink and purple imagery">
+          </a>
 
           <div class="project-info">
             <p>03</p>
@@ -126,11 +135,14 @@
               Made to promote CADRE SO during 2023, using Xbox Kinect and TouchDesigner to make the art piece
               interactive.
             </small>
+            <a class="project-link" href="projects/cadre-so-03.html">View project ↗</a>
           </div>
         </article>
 
         <article class="project project-short flex-item-grid">
-          <img src="assets/touchDesigner4.gif" alt="TouchDesigner projection installation in a public space">
+          <a class="lightbox-image" href="assets/touchDesigner4.gif" data-caption="Free Throw">
+            <img src="assets/touchDesigner4.gif" alt="TouchDesigner projection installation in a public space">
+          </a>
 
           <div class="project-info">
             <p>04</p>
@@ -141,11 +153,14 @@
               Made for the Free Throw event at the SAP Center, using tracking techniques to apply visual effects to the
               player and basketball.
             </small>
+            <a class="project-link" href="projects/free-throw.html">View project ↗</a>
           </div>
         </article>
 
         <article class="project project-tall flex-item-grid">
-          <img src="assets/touchDesigner5.gif" alt="TouchDesigner visual system with magenta effects">
+          <a class="lightbox-image" href="assets/touchDesigner5.gif" data-caption="Concert Silhouette Study">
+            <img src="assets/touchDesigner5.gif" alt="TouchDesigner visual system with magenta effects">
+          </a>
 
           <div class="project-info">
             <p>05</p>
@@ -155,11 +170,14 @@
             <small>
               A small practice using visual effects applied to a silhouette for a concert.
             </small>
+            <a class="project-link" href="projects/concert-silhouette.html">View project ↗</a>
           </div>
         </article>
 
         <article class="project project-medium flex-item-grid">
-          <img src="assets/touchDesigner6.gif" alt="Person interacting with a bright green and blue projection">
+          <a class="lightbox-image" href="assets/touchDesigner6.gif" data-caption="Maker Faire 2024">
+            <img src="assets/touchDesigner6.gif" alt="Person interacting with a bright green and blue projection">
+          </a>
 
           <div class="project-info">
             <p>06</p>
@@ -169,11 +187,14 @@
             <small>
               Made for Maker Faire 2024 to promote CADRE SO.
             </small>
+            <a class="project-link" href="projects/maker-faire-01.html">View project ↗</a>
           </div>
         </article>
 
         <article class="project project-short flex-item-grid">
-          <img src="assets/touchDesigner7.gif" alt="Blue particle projection spreading across a gallery wall">
+          <a class="lightbox-image" href="assets/touchDesigner7.gif" data-caption="Maker Faire 2024, study two">
+            <img src="assets/touchDesigner7.gif" alt="Blue particle projection spreading across a gallery wall">
+          </a>
 
           <div class="project-info">
             <p>07</p>
@@ -183,6 +204,7 @@
             <small>
               Made for Maker Faire 2024 to promote CADRE SO.
             </small>
+            <a class="project-link" href="projects/maker-faire-02.html">View project ↗</a>
           </div>
         </article>
 
@@ -252,10 +274,17 @@
   <footer>
     <p>© Have fun</p>
 
-    <a class="back-to-top" href="#page-top">
+    <a class="back-to-top" href="#top">
       Back to top ↑
     </a>
   </footer>
+
+  <script src="js/baguetteBox.js"></script>
+  <script>
+    baguetteBox.run(".flex-container-grid", {
+      captions: true
+    });
+  </script>
 
 </body>
 

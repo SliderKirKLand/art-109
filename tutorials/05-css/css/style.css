@@ -280,6 +280,12 @@ h1 {
     transform 0.3s ease;
 }
 
+.lightbox-image {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .project:hover img {
   filter: saturate(1.25);
   transform: translateY(-0.45rem);
@@ -323,6 +329,21 @@ h1 {
 .project-info span,
 .project-info small {
   margin: 0;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #f2a4bc;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  color: var(--white);
 }
 
 .project-info p,
@@ -381,6 +402,38 @@ h1 {
 .text-link:hover {
   border-color: var(--pink);
   color: var(--pink);
+}
+
+.project-page {
+  max-width: 60rem;
+  min-height: calc(100vh - 5rem);
+  padding: 7rem 0;
+}
+
+.project-page h1 {
+  max-width: 48rem;
+  margin-bottom: 1rem;
+}
+
+.project-page-meta {
+  margin-bottom: 3rem;
+  color: var(--pink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-page-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.project-page-copy {
+  max-width: 42rem;
+  font-size: 1.25rem;
 }
 
 footer {
@@ -543,6 +596,10 @@ footer a {
 
   .about-copy {
     padding-top: 2rem;
+  }
+
+  .project-page {
+    padding: 4.5rem 0;
   }
 
   footer {
