@@ -383,6 +383,12 @@ h1 {
   margin-top: 1.5rem;
 }
 
+.about-subtitle {
+  margin: 3rem 0 1.5rem;
+  color: var(--pink);
+  font-size: 2.2rem;
+}
+
 .code-section,
 .contact-section {
   padding: 7rem 0;
@@ -402,6 +408,63 @@ h1 {
 .text-link:hover {
   border-color: var(--pink);
   color: var(--pink);
+}
+
+.code-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.code-card {
+  display: flex;
+  min-height: 15rem;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.code-card:hover {
+  background: var(--burgundy);
+  color: var(--white);
+  transform: translateY(-0.3rem);
+}
+
+.code-card span,
+.code-card small,
+.code-card b {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.code-card strong {
+  margin: 2rem 0 0.4rem;
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.code-card small {
+  min-height: 2.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-transform: none;
+}
+
+.code-card b {
+  margin-top: 1.5rem;
+  color: var(--pink);
+}
+
+.code-card:hover b {
+  color: #f2a4bc;
 }
 
 .project-page {
@@ -596,6 +659,10 @@ footer a {
 
   .about-copy {
     padding-top: 2rem;
+  }
+
+  .code-grid {
+    grid-template-columns: 1fr;
   }
 
   .project-page {

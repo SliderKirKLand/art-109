@@ -1,354 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nhat Minh Le's digital media art portfolio.">
-  <title>Nhat Minh Le | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
-    rel="stylesheet">
+  <title>Main Hub</title>
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/baguetteBox.css">
+  <style>
+    body {
+      margin: 40px;
+      background: white;
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+
+    a {
+      display: block;
+      width: fit-content;
+      margin-bottom: 12px;
+      color: black;
+    }
+
+    .back-button {
+      padding: 10px 16px;
+      border: 1px solid black;
+      text-decoration: none;
+    }
+
+    .back-button:hover {
+      background: black;
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="top"></div>
-  <header class="site-header">
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="#work">Projects <span>⌄</span></a>
-      <a href="#work">Personal Projects <span>⌄</span></a>
-      <a href="#code">Code <span>⌄</span></a>
-      <a href="#about">About</a>
-    </nav>
+  <h1>ART-109 Main Hub</h1>
 
-    <a class="wordmark" href="#top">
-      Nhat Minh Le
-    </a>
-  </header>
-
-  <div class="welcome-ticker" aria-label="Welcome banner">
-    <div class="ticker-track">
-      <span>Welcome</span>
-      <span class="smile">☻</span>
-      <span>Welcome</span>
-      <span class="smile outline">☺</span>
-      <span>Welcome</span>
-      <span class="smile">☻</span>
-      <span>Welcome</span>
-      <span class="smile outline">☺</span>
-      <span>Welcome</span>
-      <span class="smile">☻</span>
-    </div>
-  </div>
-
-  <main>
-
-    <section class="hero" aria-labelledby="hero-title">
-
-      <div class="hero-card">
-        <p class="eyebrow">
-          Digital Media Art / San Jose
-        </p>
-
-        <h1 id="hero-title">
-          Feel free to click on the navigation or scroll down to see more selected works.
-        </h1>
-
-        <a class="circle-link" href="#work" aria-label="Scroll to selected work">
-          ↘
-        </a>
-      </div>
-
-      <div class="hero-image-wrap">
-        <img src="assets/pfp.jpg" alt="Portrait of Nhat Minh Le">
-      </div>
-
-    </section>
-
-    <section id="work" class="work-section" aria-labelledby="work-title">
-
-      <div class="section-intro">
-        <p class="eyebrow">
-          01 / Selected Work
-        </p>
-
-        <h2 id="work-title">
-          TouchDesigner studies built for projection, movement, and shared space.
-        </h2>
-      </div>
-
-      <div class="project-grid flex-container-grid">
-
-        <article class="project project-tall flex-item-grid">
-          <a class="lightbox-image" href="assets/touchDesigner1.gif" data-caption="CADRE SO Interactive Projection">
-            <img src="assets/touchDesigner1.gif" alt="TouchDesigner projection showing a glowing blue human figure">
-          </a>
-
-          <div class="project-info">
-            <p>01</p>
-            <h3>CADRE SO Interactive Projection</h3>
-            <span>2023 / Xbox Kinect</span>
-
-            <small>
-              Made to promote CADRE SO during 2023, using Xbox Kinect and TouchDesigner to make the art piece
-              interactive.
-            </small>
-            <a class="project-link" href="projects/cadre-so-01.html">View project ↗</a>
-          </div>
-        </article>
-
-        <article class="project project-short flex-item-grid">
-          <a class="lightbox-image" href="assets/touchDesigner2.gif" data-caption="CADRE SO Interactive Projection, study two">
-            <img src="assets/touchDesigner2.gif" alt="TouchDesigner animation with colorful glitch textures and circles">
-          </a>
-
-          <div class="project-info">
-            <p>02</p>
-            <h3>CADRE SO Interactive Projection</h3>
-            <span>2023 / Xbox Kinect</span>
-
-            <small>
-              Made to promote CADRE SO during 2023, using Xbox Kinect and TouchDesigner to make the art piece
-              interactive.
-            </small>
-            <a class="project-link" href="projects/cadre-so-02.html">View project ↗</a>
-          </div>
-        </article>
-
-        <article class="project project-medium flex-item-grid">
-          <a class="lightbox-image" href="assets/touchDesigner3.gif" data-caption="CADRE SO Interactive Projection, study three">
-            <img src="assets/touchDesigner3.gif" alt="Two screen TouchDesigner projection with pink and purple imagery">
-          </a>
-
-          <div class="project-info">
-            <p>03</p>
-            <h3>CADRE SO Interactive Projection</h3>
-            <span>2023 / Xbox Kinect</span>
-
-            <small>
-              Made to promote CADRE SO during 2023, using Xbox Kinect and TouchDesigner to make the art piece
-              interactive.
-            </small>
-            <a class="project-link" href="projects/cadre-so-03.html">View project ↗</a>
-          </div>
-        </article>
-
-        <article class="project project-short flex-item-grid">
-          <a class="lightbox-image" href="assets/touchDesigner4.gif" data-caption="Free Throw">
-            <img src="assets/touchDesigner4.gif" alt="TouchDesigner projection installation in a public space">
-          </a>
-
-          <div class="project-info">
-            <p>04</p>
-            <h3>Free Throw</h3>
-            <span>SAP Center / Tracking</span>
-
-            <small>
-              Made for the Free Throw event at the SAP Center, using tracking techniques to apply visual effects to the
-              player and basketball.
-            </small>
-            <a class="project-link" href="projects/free-throw.html">View project ↗</a>
-          </div>
-        </article>
-
-        <article class="project project-tall flex-item-grid">
-          <a class="lightbox-image" href="assets/touchDesigner5.gif" data-caption="Concert Silhouette Study">
-            <img src="assets/touchDesigner5.gif" alt="TouchDesigner visual system with magenta effects">
-          </a>
-
-          <div class="project-info">
-            <p>05</p>
-            <h3>Concert Silhouette Study</h3>
-            <span>Visual Effects Practice</span>
-
-            <small>
-              A small practice using visual effects applied to a silhouette for a concert.
-            </small>
-            <a class="project-link" href="projects/concert-silhouette.html">View project ↗</a>
-          </div>
-        </article>
-
-        <article class="project project-medium flex-item-grid">
-          <a class="lightbox-image" href="assets/touchDesigner6.gif" data-caption="Maker Faire 2024">
-            <img src="assets/touchDesigner6.gif" alt="Person interacting with a bright green and blue projection">
-          </a>
-
-          <div class="project-info">
-            <p>06</p>
-            <h3>Maker Faire 2024</h3>
-            <span>CADRE SO Promotion</span>
-
-            <small>
-              Made for Maker Faire 2024 to promote CADRE SO.
-            </small>
-            <a class="project-link" href="projects/maker-faire-01.html">View project ↗</a>
-          </div>
-        </article>
-
-        <article class="project project-short flex-item-grid">
-          <a class="lightbox-image" href="assets/touchDesigner7.gif" data-caption="Maker Faire 2024, study two">
-            <img src="assets/touchDesigner7.gif" alt="Blue particle projection spreading across a gallery wall">
-          </a>
-
-          <div class="project-info">
-            <p>07</p>
-            <h3>Maker Faire 2024</h3>
-            <span>CADRE SO Promotion</span>
-
-            <small>
-              Made for Maker Faire 2024 to promote CADRE SO.
-            </small>
-            <a class="project-link" href="projects/maker-faire-02.html">View project ↗</a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="about" class="about-section" aria-labelledby="about-title">
-
-      <div>
-        <p class="eyebrow">
-          02 / About
-        </p>
-
-        <h2 id="about-title">
-          Artist Statement
-        </h2>
-      </div>
-
-      <div class="about-copy">
-        <p>
-          What began as a simple hobby has grown into a focused practice centered on how digital systems shape
-          perception and interaction. I work across graphic design, photography, and real time media, using tools such
-          as TouchDesigner, Blender, and Adobe software. I build projects that test how images, data, and user input
-          interact. This interest comes from a drive to understand how technical systems structure what we see, how we
-          move, and how we respond.
-        </p>
-
-        <p>
-          I engage with new tools because they change the conditions of making and viewing. Real time engines, sensors,
-          and generative systems shift authorship and introduce unpredictability. I draw on ideas from media theory and
-          human-computer interaction to question what these systems are designed to do, who they serve, and how they
-          guide behavior. My work treats technology as both a medium and a subject.
-        </p>
-
-        <p>
-          I create interactive environments that engage multiple senses through motion, sound, touch, and spatial
-          awareness. These works require participation. Viewers trigger changes, navigate space, and shape outcomes
-          through their presence and input.
-        </p>
-
-        <p>
-          My practice centers on building and testing. I prototype systems, observe how people engage with them, and
-          refine the work through iteration. This process focuses on clarity, response, and connection between body,
-          space, and system.
-        </p>
-
-        <h3 class="about-subtitle">Bio</h3>
-
-        <p>
-          Nhat Minh Le is an undergraduate in Digital Media Art whose practice focuses on how digital systems shape
-          interaction and perception. He works across graphic design, photography, and interactive media, using tools
-          such as TouchDesigner, Blender, and Adobe Creative Suite to build visual systems, motion graphics, and
-          immersive environments. His projects explore how images, data, and user input connect within real time spaces.
-        </p>
-
-        <p>
-          His work centers on interactive experiences that require participation. He combines motion, sound, and spatial
-          design to create environments that respond to the presence and actions of viewers. These systems shift the
-          role of the audience from observer to participant.
-        </p>
-
-        <p>
-          Through iterative making, he develops and tests new approaches to real time media and interaction. His
-          projects examine how people engage with digital environments and how sensory input shapes that experience.
-        </p>
-      </div>
-
-    </section>
-
-    <section id="code" class="code-section" aria-labelledby="code-title">
-
-      <p class="eyebrow">
-        03 / Code
-      </p>
-
-      <h2 id="code-title">
-        Interactive experiments and playful systems.
-      </h2>
-
-      <div class="code-grid">
-        <a class="code-card" href="code/project-1/index.html">
-          <span>01</span>
-          <strong>Paint Software</strong>
-          <small>Interactive drawing tools and digital painting.</small>
-          <b>Open project ↗</b>
-        </a>
-
-        <a class="code-card" href="code/project-2/index.html">
-          <span>02</span>
-          <strong>Animation with Algorithms</strong>
-          <small>An animated system with multiple visual variations.</small>
-          <b>Open project ↗</b>
-        </a>
-
-        <a class="code-card" href="code/exercise-3/index.html">
-          <span>03</span>
-          <strong>Mouse based fun</strong>
-          <small>Ghosts with different movement, rotation, and trail behaviors.</small>
-          <b>Open exercise ↗</b>
-        </a>
-
-        <a class="code-card" href="code/project-3/index.html">
-          <span>04</span>
-          <strong>Prius Clock</strong>
-          <small>A Prius-inspired hybrid clock with interactive time controls.</small>
-          <b>Open project ↗</b>
-        </a>
-      </div>
-
-    </section>
-
-    <section id="contact" class="contact-section" aria-labelledby="contact-title">
-
-      <p class="eyebrow">
-        04 / Contact
-      </p>
-
-      <h2 id="contact-title">
-        Things to remember by.
-      </h2>
-
-      <a class="text-link" href="null" target="_blank" rel="noreferrer">
-        null <span>↗</span>
-      </a>
-
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© Have fun</p>
-
-    <a class="back-to-top" href="#top">
-      Back to top ↑
-    </a>
-  </footer>
-
-  <script src="js/baguetteBox.js"></script>
-  <script>
-    baguetteBox.run(".flex-container-grid", {
-      captions: true
-    });
-  </script>
-
+  <a href="tutorials/tutorials.html">List of Tutorials</a>
+  <a href="projects/projects.html">List of Projects</a>
 </body>
-
 </html>
