@@ -272,6 +272,21 @@
       background: #050505;
     }
 
+    .exhibition-gallery {
+      margin-top: 4rem;
+    }
+
+    .gallery-title {
+      grid-column: 1 / -1;
+      position: relative;
+      z-index: 2;
+      margin: 0 0 1rem;
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 4rem);
+      font-weight: 400;
+    }
+
 
     .behind-gallery figure {
       margin: 0;
@@ -279,7 +294,7 @@
       background: #111;
     }
 
-    .behind-gallery figure:nth-child(2) {
+    .behind-gallery figure:nth-of-type(2) {
       grid-row: span 2;
     }
 
@@ -402,7 +417,7 @@
       .interkinect-notes { grid-template-columns: 1fr; }
       .interkinect-note { min-height: auto; }
       .behind-gallery { grid-template-columns: 1fr 1fr; margin: 5rem -1rem 0; padding: 5rem 1rem; }
-      .behind-gallery figure:nth-child(2) { grid-row: auto; }
+      .behind-gallery figure:nth-of-type(2) { grid-row: auto; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -653,31 +668,39 @@
       </div>
     </section>
 
-    <section class="behind-section" aria-labelledby="behind-title">
-      <div>
-        <h2 id="behind-title">Behind the Scene</h2>
-      </div>
-      <h3>The installation was one of my first opportunities to set up a gallery and manage the technical details of an exhibition, including projectors, visual playback, and the relationship between the projected image and the room. The experience gave me a clearer understanding of how an immersive exhibition comes together. It also showed me how technical preparation supports the audience’s experience of the work.</p>
-    </section>
-    
-    <section class="behind-gallery" aria-label="InterKinect installation documentation">
+    <section class="behind-gallery exhibition-gallery" aria-labelledby="exhibition-title">
       <svg class="behind-wave" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
         <path d="M0 70 C145 48 255 18 390 43 C545 71 655 105 790 89 C880 78 947 49 1000 70 L1000 100 L0 100 Z" fill="#050505" stroke="none" />
         <path d="M0 70 C145 48 255 18 390 43 C545 71 655 105 790 89 C880 78 947 49 1000 70" fill="none" stroke="#55162f" stroke-width="4" />
       </svg>
-      <figure><img src="../assets/interkinect/photo-01.webp" alt="InterKinect installation documentation image one"></figure>
-      <figure><img src="../assets/interkinect/photo-02.webp" alt="InterKinect installation documentation image two"></figure>
-      <figure><img src="../assets/interkinect/photo-03.webp" alt="InterKinect installation documentation image three"></figure>
-      <figure><img src="../assets/interkinect/photo-04.webp" alt="InterKinect installation documentation image four"></figure>
-      <figure><img src="../assets/interkinect/photo-05.webp" alt="InterKinect installation documentation image five"></figure>
-      <figure><img src="../assets/interkinect/photo-06.webp" alt="InterKinect installation documentation image six"></figure>
-      <figure><img src="../assets/interkinect/photo-07.webp" alt="InterKinect installation documentation image seven"></figure>
-      <figure><img src="../assets/interkinect/photo-08.webp" alt="InterKinect installation documentation image eight"></figure>
-      <figure><img src="../assets/interkinect/photo-09.webp" alt="InterKinect installation documentation image nine"></figure>
-      <figure><img src="../assets/interkinect/photo-10.webp" alt="InterKinect installation documentation image ten"></figure>
-      <figure><img src="../assets/interkinect/photo-11.webp" alt="InterKinect installation documentation image eleven"></figure>
-      <figure><img src="../assets/interkinect/photo-12.webp" alt="InterKinect installation documentation image twelve"></figure>
-      <figure><img src="../assets/interkinect/photo-13.webp" alt="InterKinect installation documentation image thirteen"></figure>
+      <figure><img src="../assets/interkinect/photo-01.webp" alt="InterKinect exhibition image one"></figure>
+      <figure><img src="../assets/interkinect/photo-02.webp" alt="InterKinect exhibition image two"></figure>
+      <figure><img src="../assets/interkinect/photo-03.webp" alt="InterKinect exhibition image three"></figure>
+      <figure><img src="../assets/interkinect/photo-04.webp" alt="InterKinect exhibition image four"></figure>
+      <figure><img src="../assets/interkinect/photo-05.webp" alt="InterKinect exhibition image five"></figure>
+      <figure><img src="../assets/interkinect/photo-06.webp" alt="InterKinect exhibition image six"></figure>
+    </section>
+
+    <section class="behind-section" aria-labelledby="behind-title">
+      <div>
+        <h2 id="behind-title">Behind the Scene</h2>
+      </div>
+      <h3>The behind-the-scenes pictures capture one of the first times I had the responsibility of setting up a gallery and managing the technical aspects, like handling projectors, for the InterKinect installation. This experience gave me a deeper understanding of the work that goes into creating an immersive exhibition, from coordinating visuals to ensuring the technical elements enhance the overall experience. It was a learning curve, but also a rewarding opportunity to see how my creative vision could come to life in a physical space.</h3>
+    </section>
+    
+    <section class="behind-gallery" aria-label="InterKinect behind the scene documentation">
+      <svg class="behind-wave" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 70 C145 48 255 18 390 43 C545 71 655 105 790 89 C880 78 947 49 1000 70 L1000 100 L0 100 Z" fill="#050505" stroke="none" />
+        <path d="M0 70 C145 48 255 18 390 43 C545 71 655 105 790 89 C880 78 947 49 1000 70" fill="none" stroke="#55162f" stroke-width="4" />
+      </svg>
+  
+      <figure><img src="../assets/interkinect/photo-07.webp" alt="InterKinect behind the scene image one"></figure>
+      <figure><img src="../assets/interkinect/photo-08.webp" alt="InterKinect behind the scene image two"></figure>
+      <figure><img src="../assets/interkinect/photo-09.webp" alt="InterKinect behind the scene image three"></figure>
+      <figure><img src="../assets/interkinect/photo-10.webp" alt="InterKinect behind the scene image four"></figure>
+      <figure><img src="../assets/interkinect/photo-11.webp" alt="InterKinect behind the scene image five"></figure>
+      <figure><img src="../assets/interkinect/photo-12.webp" alt="InterKinect behind the scene image six"></figure>
+      <figure><img src="../assets/interkinect/photo-13.webp" alt="InterKinect behind the scene image seven"></figure>
     </section>
 
     <a class="text-link" href="../index.html#work">Back to projects ↗</a>
