@@ -6,614 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="InterKinect, an interactive projection made for CADRE SO.">
   <title>InterKinect | Nhat Minh Le</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .interkinect-page {
-      max-width: 100%;
-      padding: 0 3vw 7rem;
-    }
-
-    .interkinect-intro {
-      display: grid;
-      grid-template-columns: minmax(15rem, 0.65fr) minmax(0, 1.35fr);
-      gap: 3rem;
-      align-items: end;
-      max-width: 84rem;
-      margin: 0 auto;
-      padding: 6rem 0 3rem;
-    }
-
-    .interkinect-intro h1 {
-      margin: 0;
-      max-width: 34rem;
-    }
-
-    .interkinect-summary {
-      max-width: 35rem;
-      margin: 0;
-      font-size: 1.2rem;
-    }
-
-    .interkinect-purpose {
-      max-width: 38rem;
-      margin: 2rem 0 0;
-      font-size: 1rem;
-    }
-
-    .interkinect-meta {
-      margin: 0 0 1rem;
-      color: var(--pink);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .interkinect-stage {
-      position: relative;
-      min-height: 47rem;
-      max-width: 90rem;
-      margin: 0 auto;
-      overflow: hidden;
-      background: #dededd;
-      border-radius: 0.2rem;
-      isolation: isolate;
-    }
-
-    .interkinect-stage::before {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: radial-gradient(circle at 52% 42%, rgba(255, 255, 255, 0.55), transparent 36%), #dededd;
-      content: "";
-    }
-
-    .media-tile {
-      position: absolute;
-      z-index: 1;
-      display: block;
-      width: clamp(10rem, 20vw, 21rem);
-      padding: 0;
-      overflow: hidden;
-      border: 0;
-      background: #111;
-      box-shadow: 0 1.5rem 1.8rem rgba(0, 0, 0, 0.28);
-      cursor: pointer;
-      transform: perspective(850px) rotateX(42deg) rotateZ(var(--rotation));
-      transform-origin: center center;
-      animation: interkinect-float var(--float-time) ease-in-out infinite alternate;
-      animation-delay: var(--float-delay);
-      transition: box-shadow 0.25s ease, filter 0.25s ease;
-    }
-
-    .media-tile:hover,
-    .media-tile:focus-visible {
-      z-index: 3;
-      box-shadow: 0 1.9rem 2.5rem rgba(0, 0, 0, 0.36);
-      filter: saturate(1.25);
-      outline: 3px solid var(--pink);
-      outline-offset: 0.4rem;
-    }
-
-    .media-tile video,
-    .media-tile img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-    }
-
-    .media-tile .tile-label {
-      position: absolute;
-      right: 0.7rem;
-      bottom: 0.55rem;
-      padding: 0.25rem 0.45rem;
-      background: rgba(0, 0, 0, 0.68);
-      color: white;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .tile-one { top: 16%; left: 6%; width: clamp(19rem, 38vw, 39rem); --rotation: -14deg; --float-time: 6.5s; --float-delay: -2s; }
-    .tile-two { top: 8%; left: 52%; --rotation: -4deg; --float-time: 7.5s; --float-delay: -5s; }
-    .tile-three { top: 11%; right: 6%; --rotation: 7deg; --float-time: 5.7s; --float-delay: -1s; }
-    .tile-four { top: 56%; left: 52%; --rotation: -9deg; --float-time: 6.8s; --float-delay: -4s; }
-    .tile-five { top: 57%; right: 7%; --rotation: 6deg; --float-time: 8s; --float-delay: -3s; }
-    .tile-six,
-    .tile-seven { display: none; }
-
-    .tile-controls {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .tile-controls b {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      display: grid;
-      width: 2.8rem;
-      height: 2.8rem;
-      place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.86);
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.42);
-      color: white;
-      font-size: 0.9rem;
-      transform: translate(-50%, -50%);
-    }
-
-    .tile-controls i {
-      position: absolute;
-      right: 5%;
-      bottom: 0.8rem;
-      left: 5%;
-      height: 2px;
-      background: rgba(255, 255, 255, 0.78);
-    }
-
-    .tile-controls i::after {
-      display: block;
-      width: 35%;
-      height: 100%;
-      background: white;
-      content: "";
-    }
-
-    .tile-controls em {
-      position: absolute;
-      bottom: 1.15rem;
-      left: 5%;
-      color: white;
-      font-size: 0.55rem;
-      font-style: normal;
-      letter-spacing: 0.04em;
-    }
-
-    @keyframes interkinect-float {
-      from { translate: 0 -0.8rem; }
-      to { translate: 0 0.8rem; }
-    }
-
-    .interkinect-caption {
-      max-width: 40rem;
-      margin: 2rem auto 0;
-      text-align: center;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .interkinect-details {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: clamp(2rem, 7vw, 7rem);
-      max-width: 84rem;
-      margin: 7rem auto 0;
-      padding-top: 3rem;
-      border-top: 1px solid var(--line);
-    }
-
-    .interkinect-details h2,
-    .behind-section h2 {
-      max-width: 28rem;
-      margin-bottom: 1.5rem;
-      font-size: clamp(2.5rem, 5vw, 4.8rem);
-    }
-
-    .interkinect-details p,
-    .behind-section p {
-      max-width: 42rem;
-      font-size: 1.15rem;
-    }
-
-    .interkinect-notes {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .interkinect-note {
-      min-height: 12rem;
-      padding: 1.2rem;
-      border: 1px solid var(--line);
-    }
-
-    .interkinect-note span {
-      color: var(--pink);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .interkinect-note h3 {
-      margin: 2.5rem 0 0.6rem;
-      font-size: 1.65rem;
-    }
-
-    .interkinect-note p {
-      margin: 0;
-      font-size: 0.95rem;
-    }
-
-    .behind-section {
-      display: grid;
-      grid-template-columns: minmax(15rem, 0.7fr) minmax(0, 1.3fr);
-      gap: clamp(2rem, 7vw, 7rem);
-      max-width: 84rem;
-      margin: 7rem auto 0;
-      padding-top: 3rem;
-      border-top: 1px solid var(--line);
-    }
-
-    .behind-wave {
-      position: absolute;
-      top: -5rem;
-      left: 0;
-      width: 100%;
-      height: 5rem;
-      overflow: visible;
-      pointer-events: none;
-    }
-
-
-    .behind-gallery {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0.3rem;
-      max-width: none;
-      margin: 6rem -3vw 0;
-      padding: 7rem 3vw 8rem;
-      background: #050505;
-    }
-
-    .exhibition-gallery {
-      margin-top: 4rem;
-    }
-
-    .gallery-title {
-      grid-column: 1 / -1;
-      position: relative;
-      z-index: 2;
-      margin: 0 0 1rem;
-      color: var(--white);
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 4rem);
-      font-weight: 400;
-    }
-
-
-    .behind-gallery figure {
-      margin: 0;
-      overflow: hidden;
-      background: #111;
-    }
-
-    .behind-gallery figure:nth-of-type(2) {
-      grid-row: span 2;
-    }
-
-    .behind-gallery img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      min-height: 15rem;
-      object-fit: cover;
-      opacity: 0.9;
-      cursor: zoom-in;
-      transition: opacity 0.25s ease, transform 0.35s ease;
-    }
-
-    .behind-gallery figure:hover img {
-      opacity: 1;
-      transform: scale(1.03);
-    }
-
-    .media-viewer {
-      position: fixed;
-      inset: 0;
-      z-index: 50;
-      display: grid;
-      place-items: center;
-      padding: 4vw;
-      background: rgba(8, 8, 8, 0.88);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-    }
-
-    .media-viewer.is-open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .media-viewer figure {
-      position: relative;
-      width: min(92vw, 78rem);
-      margin: 0;
-    }
-
-    .media-viewer video {
-      display: block;
-      width: 100%;
-      max-height: 82vh;
-      object-fit: contain;
-      background: #111;
-    }
-
-    .media-viewer figcaption {
-      padding: 0.7rem 0;
-      color: white;
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .image-viewer {
-      position: fixed;
-      inset: 0;
-      z-index: 60;
-      display: grid;
-      place-items: center;
-      padding: 4vw;
-      background: rgba(8, 8, 8, 0.9);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-    }
-
-    .image-viewer.is-open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .image-viewer figure {
-      position: relative;
-      width: min(92vw, 78rem);
-      margin: 0;
-      padding: 0.7rem;
-      background: #050505;
-      box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.5);
-    }
-
-    .image-viewer img {
-      display: block;
-      width: 100%;
-      max-height: 82vh;
-      object-fit: contain;
-    }
-
-    .viewer-close {
-      position: absolute;
-      top: -3.3rem;
-      right: 0;
-      border: 0;
-      background: transparent;
-      color: white;
-      font-size: 2.4rem;
-      line-height: 1;
-      cursor: pointer;
-    }
-
-    @media (max-width: 700px) {
-      .interkinect-page { padding: 0 1rem 5rem; }
-      .interkinect-intro { display: block; padding: 3rem 0 2rem; }
-      .interkinect-summary { margin-top: 1.5rem; font-size: 1rem; }
-      .interkinect-purpose { font-size: 0.95rem; }
-      .interkinect-stage { min-height: 38rem; }
-      .media-tile { width: clamp(8rem, 39vw, 13rem); }
-      .tile-one { top: 13%; left: 3%; width: clamp(15rem, 66vw, 25rem); }
-      .tile-two { top: 5%; left: 47%; }
-      .tile-three { top: 25%; right: 1%; }
-      .tile-four { top: 49%; left: 42%; }
-      .tile-five { top: 68%; right: 3%; }
-      .interkinect-details,
-      .behind-section { display: block; margin-top: 5rem; }
-      .interkinect-notes { grid-template-columns: 1fr; }
-      .interkinect-note { min-height: auto; }
-      .behind-gallery { grid-template-columns: 1fr 1fr; margin: 5rem -1rem 0; padding: 5rem 1rem; }
-      .behind-gallery figure:nth-of-type(2) { grid-row: auto; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .media-tile { animation: none; }
-    }
-
-    body {
-      background: #e7e7e7;
-      color: #171717;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .interkinect-page {
-      max-width: none;
-      padding: 0 4vw 5rem;
-    }
-
-    .interkinect-intro {
-      position: relative;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(10rem, 0.55fr);
-      align-items: start;
-      max-width: 90rem;
-      padding: 1.5rem 0 3.8rem;
-    }
-
-    .interkinect-intro::after {
-      display: none;
-    }
-
-    .interkinect-heading {
-      grid-column: 1 / -1;
-    }
-
-    .interkinect-copy {
-      max-width: 19rem;
-      margin-top: 1rem;
-      font-size: 0.78rem;
-      line-height: 1.45;
-    }
-
-    .interkinect-copy p {
-      margin-bottom: 1.35rem;
-    }
-
-    .interkinect-badge {
-      position: absolute;
-      top: 9.7rem;
-      right: 3vw;
-      width: 8rem;
-      height: 8rem;
-      border-radius: 50%;
-      box-shadow: 0 0 1.5rem rgba(84, 21, 47, 0.55);
-      object-fit: contain;
-      animation: badge-float 7s ease-in-out infinite alternate;
-    }
-
-    @keyframes badge-float {
-      from { transform: translateY(-0.35rem) rotate(-4deg); }
-      to { transform: translateY(0.35rem) rotate(4deg); }
-    }
-
-    .interkinect-intro h1,
-    .interkinect-details h2,
-    .behind-section h2 {
-      color: var(--burgundy);
-      font-family: var(--serif);
-    }
-
-    .interkinect-intro h1 {
-      max-width: 40rem;
-      font-size: clamp(3.8rem, 7vw, 6.7rem);
-      line-height: 0.86;
-    }
-
-    .interkinect-meta,
-    .eyebrow {
-      color: var(--burgundy);
-    }
-
-    .interkinect-summary,
-    .interkinect-purpose {
-      max-width: 31rem;
-      font-size: 0.95rem;
-      line-height: 1.55;
-    }
-
-    .interkinect-purpose {
-      margin-top: 1.7rem;
-    }
-
-    .interkinect-caption {
-      display: none;
-    }
-
-    .interkinect-details {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(2rem, 6vw, 7rem);
-      margin-top: 1.8rem;
-      padding-top: 0;
-      border-top: 0;
-    }
-
-    .interkinect-details > div {
-      min-width: 0;
-    }
-
-    .interkinect-details ul {
-      margin: 0;
-      padding-left: 1.2rem;
-      font-size: 0.78rem;
-      line-height: 1.5;
-    }
-
-    .interkinect-details li + li {
-      margin-top: 0.8rem;
-    }
-
-    .interkinect-stage {
-      max-width: 90rem;
-      min-height: 44rem;
-      background: #e7e7e7;
-      border-radius: 0;
-    }
-
-    .interkinect-stage::before {
-      background: radial-gradient(circle at 52% 42%, rgba(255, 255, 255, 0.7), transparent 36%), #e7e7e7;
-    }
-
-    .interkinect-caption {
-      color: #171717;
-      font-size: 0.7rem;
-    }
-
-    .interkinect-details,
-    .behind-section {
-      max-width: 90rem;
-      border-top: 0;
-    }
-
-    .interkinect-details h2,
-    .behind-section h2 {
-      font-size: clamp(2.8rem, 5vw, 5.4rem);
-      line-height: 0.9;
-    }
-
-    .interkinect-details p,
-    .behind-section p {
-      font-size: 0.85rem;
-      line-height: 1.55;
-    }
-
-    .interkinect-note {
-      min-height: 0;
-      padding: 0;
-      border: 0;
-    }
-
-    .interkinect-note h3 {
-      margin: 1.2rem 0 0.5rem;
-      color: var(--burgundy);
-      font-family: var(--serif);
-      font-size: 1.8rem;
-    }
-
-    .interkinect-note p {
-      font-size: 0.78rem;
-    }
-
-    .behind-section {
-      margin-top: 6rem;
-      padding-top: 0;
-    }
-
-    .behind-gallery {
-      margin-left: -4vw;
-      margin-right: -4vw;
-    }
-
-    .text-link {
-      color: var(--burgundy);
-    }
-
-    @media (max-width: 700px) {
-      .interkinect-page { padding: 0 1rem 4rem; }
-      .interkinect-intro { display: block; padding-top: 2rem; }
-      .interkinect-heading { padding-right: 5rem; }
-      .interkinect-copy { max-width: 32rem; }
-      .interkinect-badge { top: 5rem; right: 0; width: 4.5rem; height: 4.5rem; }
-      .interkinect-intro h1 { font-size: clamp(3.4rem, 16vw, 5.5rem); }
-      .interkinect-details { grid-template-columns: 1fr; gap: 1.5rem; }
-      .behind-gallery { margin-left: -1rem; margin-right: -1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/shared/base.css">
+  <link rel="stylesheet" href="../css/pages/interkinect/page.css">
 </head>
 
 <body>
+  <div id="top"></div>
   <header class="site-header">
     <nav class="main-nav" aria-label="Main navigation">
       <a href="../index.html#work">Projects <span>⌄</span></a>
@@ -621,7 +19,10 @@
       <a href="../index.html#code">Code <span>⌄</span></a>
       <a href="../index.html#about">About</a>
     </nav>
-    <a class="wordmark" href="../index.html#top">Nhat Minh Le</a>
+
+    <a class="wordmark" href="../index.html#top">
+      Nhat Minh Le
+    </a>
   </header>
 
   <main class="interkinect-page">
@@ -629,7 +30,7 @@
       <div class="interkinect-heading">
         <h1 id="interkinect-title">InterKinect</h1>
       </div>
-      <img class="interkinect-badge" src="../assets/interkinect-badge.png" alt="Teal, burgundy, and pink InterKinect badge">
+      <img class="interkinect-badge" src="../assets/home/badge.png" alt="Teal, burgundy, and pink InterKinect badge">
       <div class="interkinect-copy">
         <h2>The videos attached below were used during the second installation of InterKinect. I was tasked with creating the visuals and setting up the exhibitions over the course of one week.</h2>
         <h2>The exhibition ran for five days and was a promotion to get more students to join the CADRE S.O. club. After the promotion, 30+ new students join the club which boosted the club visibility.</p>
@@ -640,11 +41,11 @@
     </section>
 
     <section class="interkinect-stage" aria-label="Five floating InterKinect videos">
-      <button class="media-tile tile-one" type="button" data-title="InterKinect video one"><video src="../assets/interkinect/video-01.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="tile-label">01 / View</span><span class="tile-controls" aria-hidden="true"><b>▶</b><i></i><em>00:00</em></span></button>
-      <button class="media-tile tile-two" type="button" data-title="InterKinect video two"><video src="../assets/interkinect/video-02.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="tile-label">02 / View</span><span class="tile-controls" aria-hidden="true"><b>▶</b><i></i><em>00:00</em></span></button>
-      <button class="media-tile tile-three" type="button" data-title="InterKinect video three"><video src="../assets/interkinect/video-03.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="tile-label">03 / View</span><span class="tile-controls" aria-hidden="true"><b>▶</b><i></i><em>00:00</em></span></button>
-      <button class="media-tile tile-four" type="button" data-title="InterKinect video four"><video src="../assets/interkinect/video-04.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="tile-label">04 / View</span><span class="tile-controls" aria-hidden="true"><b>▶</b><i></i><em>00:00</em></span></button>
-      <button class="media-tile tile-five" type="button" data-title="InterKinect video five"><video src="../assets/interkinect/video-05.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="tile-label">05 / View</span><span class="tile-controls" aria-hidden="true"><b>▶</b><i></i><em>00:00</em></span></button>
+      <button class="media-tile tile-one" type="button" data-title="InterKinect video one"><video src="../assets/interkinect/video01.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="tile-label">01 / View</span><span class="tile-controls" aria-hidden="true"><b>▶</b><i></i><em>00:00</em></span></button>
+      <button class="media-tile tile-two" type="button" data-title="InterKinect video two"><video src="../assets/interkinect/video02.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="tile-label">02 / View</span><span class="tile-controls" aria-hidden="true"><b>▶</b><i></i><em>00:00</em></span></button>
+      <button class="media-tile tile-three" type="button" data-title="InterKinect video three"><video src="../assets/interkinect/video03.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="tile-label">03 / View</span><span class="tile-controls" aria-hidden="true"><b>▶</b><i></i><em>00:00</em></span></button>
+      <button class="media-tile tile-four" type="button" data-title="InterKinect video four"><video src="../assets/interkinect/video04.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="tile-label">04 / View</span><span class="tile-controls" aria-hidden="true"><b>▶</b><i></i><em>00:00</em></span></button>
+      <button class="media-tile tile-five" type="button" data-title="InterKinect video five"><video src="../assets/interkinect/video05.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="tile-label">05 / View</span><span class="tile-controls" aria-hidden="true"><b>▶</b><i></i><em>00:00</em></span></button>
     </section>
 
     <section class="interkinect-details" aria-label="InterKinect project notes">
@@ -673,12 +74,12 @@
         <path d="M0 70 C145 48 255 18 390 43 C545 71 655 105 790 89 C880 78 947 49 1000 70 L1000 100 L0 100 Z" fill="#050505" stroke="none" />
         <path d="M0 70 C145 48 255 18 390 43 C545 71 655 105 790 89 C880 78 947 49 1000 70" fill="none" stroke="#55162f" stroke-width="4" />
       </svg>
-      <figure><img src="../assets/interkinect/photo-01.webp" alt="InterKinect exhibition image one"></figure>
-      <figure><img src="../assets/interkinect/photo-02.webp" alt="InterKinect exhibition image two"></figure>
-      <figure><img src="../assets/interkinect/photo-03.webp" alt="InterKinect exhibition image three"></figure>
-      <figure><img src="../assets/interkinect/photo-04.webp" alt="InterKinect exhibition image four"></figure>
-      <figure><img src="../assets/interkinect/photo-05.webp" alt="InterKinect exhibition image five"></figure>
-      <figure><img src="../assets/interkinect/photo-06.webp" alt="InterKinect exhibition image six"></figure>
+      <figure><img src="../assets/interkinect/photo01.webp" alt="InterKinect exhibition image one"></figure>
+      <figure><img src="../assets/interkinect/photo02.webp" alt="InterKinect exhibition image two"></figure>
+      <figure><img src="../assets/interkinect/photo03.webp" alt="InterKinect exhibition image three"></figure>
+      <figure><img src="../assets/interkinect/photo04.webp" alt="InterKinect exhibition image four"></figure>
+      <figure><img src="../assets/interkinect/photo05.webp" alt="InterKinect exhibition image five"></figure>
+      <figure><img src="../assets/interkinect/photo06.webp" alt="InterKinect exhibition image six"></figure>
     </section>
 
     <section class="behind-section" aria-labelledby="behind-title">
@@ -694,13 +95,13 @@
         <path d="M0 70 C145 48 255 18 390 43 C545 71 655 105 790 89 C880 78 947 49 1000 70" fill="none" stroke="#55162f" stroke-width="4" />
       </svg>
   
-      <figure><img src="../assets/interkinect/photo-07.webp" alt="InterKinect behind the scene image one"></figure>
-      <figure><img src="../assets/interkinect/photo-08.webp" alt="InterKinect behind the scene image two"></figure>
-      <figure><img src="../assets/interkinect/photo-09.webp" alt="InterKinect behind the scene image three"></figure>
-      <figure><img src="../assets/interkinect/photo-10.webp" alt="InterKinect behind the scene image four"></figure>
-      <figure><img src="../assets/interkinect/photo-11.webp" alt="InterKinect behind the scene image five"></figure>
-      <figure><img src="../assets/interkinect/photo-12.webp" alt="InterKinect behind the scene image six"></figure>
-      <figure><img src="../assets/interkinect/photo-13.webp" alt="InterKinect behind the scene image seven"></figure>
+      <figure><img src="../assets/interkinect/photo07.webp" alt="InterKinect behind the scene image one"></figure>
+      <figure><img src="../assets/interkinect/photo08.webp" alt="InterKinect behind the scene image two"></figure>
+      <figure><img src="../assets/interkinect/photo09.webp" alt="InterKinect behind the scene image three"></figure>
+      <figure><img src="../assets/interkinect/photo10.webp" alt="InterKinect behind the scene image four"></figure>
+      <figure><img src="../assets/interkinect/photo11.webp" alt="InterKinect behind the scene image five"></figure>
+      <figure><img src="../assets/interkinect/photo12.webp" alt="InterKinect behind the scene image six"></figure>
+      <figure><img src="../assets/interkinect/photo13.webp" alt="InterKinect behind the scene image seven"></figure>
     </section>
 
     <a class="text-link" href="../index.html#work">Back to projects ↗</a>

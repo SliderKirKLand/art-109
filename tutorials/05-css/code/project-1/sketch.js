@@ -12,8 +12,8 @@ var redoStack = [];  // Stores the undone actions
 
 function preload(){
   //image setup
-  test = loadImage("assets/astro_angry.gif");
-  closeW = loadImage('assets/closeW.png');
+  test = loadImage("assets/astro.gif");
+  closeW = loadImage('assets/close.png');
   minimize = loadImage('assets/minus.png');
   square = loadImage('assets/square.png');
   //font
@@ -166,7 +166,7 @@ function setupCanvas() {
   BrushButton.position(105, 510);
   BrushButton.style('width', '30px');
   BrushButton.style('height', '30px');
-  BrushButton.style('background-image', 'url(assets/paintbrush.png)');
+  BrushButton.style('background-image', 'url(assets/brush.png)');
   BrushButton.style('background-size', 'cover');
   BrushButton.style('background-color', '#fff2eb');
   BrushButton.style('border', 'none');

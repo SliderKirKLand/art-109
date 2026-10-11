@@ -1,0 +1,8 @@
+.project-page {
+  font-family: var(--sans);
+}
+
+.project-page h1 {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 7vw, 6rem);
+}

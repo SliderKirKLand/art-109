@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap");
+
 :root {
   --burgundy: #55162f;
   --burgundy-dark: #3d1023;
@@ -41,11 +43,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 3.75rem;
+  height: 60px;
+  min-height: 60px;
   padding: 0 3vw;
   background: var(--burgundy);
   color: var(--white);
-  box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.22);
+  box-shadow: 0 3px 0 rgb(194, 194, 194);
 }
 
 .main-nav {
@@ -560,6 +563,7 @@ footer a {
 @media (max-width: 700px) {
   .site-header {
     position: relative;
+    height: auto;
     min-height: 7rem;
     padding: 1rem;
   }
