@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandwiches, Videos + Webcam</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Sandwiches, Videos + Webcam</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sandwich Recipe Video</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/K7QiJk5ZDpQ" title="3 Easy and Delicious Bread Sandwich Recipes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+
+    <section>
+      <h2>Build a Better Sandwich</h2>
+      <div style="position: relative; width: 650px; max-width: 90vw;">
+        <img src="assets/sandwich.png" alt="A sandwich with multigrain bread, lettuce, tomato, cheese, and turkey" width="280" style="display: block; max-width: 100%; margin-bottom: 20px;">
+        <img src="assets/sandwich.gif" alt="Animated sandwich GIF" width="180" style="position: absolute; top: 0; right: 0;">
+        <p style="font-size: 42px; line-height: 1.15; margin-left: 190px;">
+          bread lettuce tomato cheese turkey bread lettuce tomato cheese turkey bread lettuce
+          tomato cheese turkey bread lettuce tomato cheese turkey bread lettuce tomato cheese
+          turkey bread lettuce tomato cheese turkey
+        </p>
+        <div aria-label="Animated sandwich sticker" style="position: absolute; top: 330px; left: 230px; font-size: 120px; animation: bounce 2s infinite alternate;">🥪</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Make Your Own Sandwich Video</h2>
+      <p>Allow camera access to record your sandwich preparation.</p>
+      <video id="webcam" width="420" autoplay playsinline></video>
+      <p id="webcam-status">Waiting for webcam permission...</p>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
