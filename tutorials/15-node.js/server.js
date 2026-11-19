@@ -53,4 +53,4 @@ function send(socket, message) { socket.send(JSON.stringify(message)); }
 function broadcast(message, except) { websocketServer.clients.forEach(client => { if (client !== except && client.readyState === WebSocket.OPEN) send(client, message); }); }
 function broadcastPresence() { broadcast({ type: 'presence', participants: Object.fromEntries([...participants.values()].map(person => [person.id, person])) }); }
 
-server.listen(port, () => console.log(`Common Ground is running at http://localhost:${port}`));
+server.listen(port, '0.0.0.0', () => console.log(`Common Ground is running on port ${port}`));
