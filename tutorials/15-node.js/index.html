@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>untitled - Paint</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="libraries/p5.js"></script>
+  </head>
+  <body>
+    <main class="xp-window">
+      <header class="title-bar"><span class="title-icon">▣</span><span>untitled - Paint</span><div class="window-buttons"><button>_</button><button>□</button><button class="close">×</button></div></header>
+      <nav class="menu-bar" aria-label="Paint menu"><button>File</button><button>Edit</button><button>View</button><button>Image</button><button>Colors</button><button>Help</button></nav>
+      <section class="paint-body">
+        <aside class="toolbox" aria-label="Paint tools">
+          <button class="paint-tool selected" data-tool="pencil" title="Pencil">✎</button><button class="paint-tool" data-tool="brush" title="Brush">▰</button><button class="paint-tool" data-tool="line" title="Line">╱</button><button class="paint-tool" data-tool="eraser" title="Eraser">▱</button><button class="paint-tool" data-tool="rectangle" title="Rectangle">□</button><button class="paint-tool" data-tool="ellipse" title="Ellipse">○</button><button class="paint-tool" data-tool="clear" title="Clear">⌫</button>
+        </aside>
+        <section class="work-area"><div class="canvas-scroll"><div id="canvas-container"></div></div><footer class="status-bar"><span id="status-text">For Help, click Help Topics on the Help Menu.</span><span id="connection-status">Connecting...</span><span id="stroke-count">0 strokes</span></footer></section>
+        <aside class="player-panel" aria-label="Players"><div class="panel-title">Players</div><label for="player-name">Your name</label><input id="player-name" maxlength="18" value="Guest"><div class="joined-title">Joined users</div><div id="player-list"><div class="player-empty">Waiting for players...</div></div></aside>
+      </section>
+      <section class="palette-row"><div class="color-box"><div id="primary-color"></div><div id="secondary-color"></div></div><div class="palette" aria-label="Colors"><button class="color selected" data-color="#000000" style="background:#000000"></button><button class="color" data-color="#ffffff" style="background:#ffffff"></button><button class="color" data-color="#808080" style="background:#808080"></button><button class="color" data-color="#800000" style="background:#800000"></button><button class="color" data-color="#008000" style="background:#008000"></button><button class="color" data-color="#000080" style="background:#000080"></button><button class="color" data-color="#808000" style="background:#808000"></button><button class="color" data-color="#800080" style="background:#800080"></button><button class="color" data-color="#ff0000" style="background:#ff0000"></button><button class="color" data-color="#00a000" style="background:#00a000"></button><button class="color" data-color="#0000ff" style="background:#0000ff"></button><button class="color" data-color="#ffff00" style="background:#ffff00"></button><button class="color" data-color="#00ffff" style="background:#00ffff"></button><button class="color" data-color="#ff00ff" style="background:#ff00ff"></button><button class="color" data-color="#ff8000" style="background:#ff8000"></button><button class="color" data-color="#804000" style="background:#804000"></button></div><label class="size-control">Size <input id="size-slider" type="range" min="1" max="24" value="3"><span id="size-value">3</span></label></section>
+    </main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
